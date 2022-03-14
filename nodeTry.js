@@ -14,19 +14,24 @@
 // console.log(greetings);
 
 //Asynchronous
-const getUser = (id, callback) => {
-    const time = id === 1 ? 3000 : 2000;
-    setTimeout(() => {
-        const name = id === 1 ? 'Muhammad' : 'Mujahid';
-        callback({id, name});
-    }, time);
-};
+// const getUser = (id, callback) => {
+//     const time = id === 1 ? 3000 : 2000;
+//     setTimeout(() => {
+//         const name = id === 1 ? 'Muhammad' : 'Mujahid';
+//         callback({id, name});
+//     }, time);
+// };
 
-const firstUser = getUser (1, (results) =>{
-    console.log(results);
-});
-const secondUser = getUser (2, (results) =>{
-    console.log(results);
-});
-const greetings = 'Hello World!';
-console.log(greetings);
+// const firstUser = getUser (1, (results) =>{
+//     console.log(results);
+// });
+// const secondUser = getUser (2, (results) =>{
+//     console.log(results);
+// });
+// const greetings = 'Hello World!';
+// console.log(greetings);
+
+function printName(name) {
+    return `Hello, My name is ${name}`;
+}
+module.exports = printName;
