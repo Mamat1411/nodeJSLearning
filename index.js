@@ -1,3 +1,3 @@
-const printName = require('./nodeTry');
+const nodeTry = require('./nodeTry');
 // console.log("Hello, World!");
-console.log(printName('Mamat'));
+console.log(nodeTry.printName('Mamat'), nodeTry.PI, nodeTry.employee.printEmployee());

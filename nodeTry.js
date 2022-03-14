@@ -34,4 +34,21 @@
 function printName(name) {
     return `Hello, My name is ${name}`;
 }
-module.exports = printName;
+const PI = 3.14;
+const employee = {
+    name : "Muhammad",
+    age  : 23,
+    printEmployee(){
+        return `Hello, my name is ${this.name} and i am ${this.age} years old`;
+    }
+};
+
+// module.exports.printName = printName;
+// module.exports.PI = PI;
+// module.exports.employee = employee;
+
+module.exports = {
+    printName,
+    PI,
+    employee
+};
