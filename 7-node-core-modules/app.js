@@ -19,4 +19,12 @@ const fs = require('fs');
 // });
 
 //Reading Files (sync)
-console.log(fs.readFileSync('7-node-core-modules/testSync.txt', 'utf-8'));
+// console.log(fs.readFileSync('7-node-core-modules/testSync.txt', 'utf-8'));
+
+//Reading Files (async)
+const fileToRead = fs.readFile('7-node-core-modules/testAsync.txt', 'utf-8', (error, data) => {
+    if (error) {
+        throw error;
+    }
+    console.log(data);
+});
