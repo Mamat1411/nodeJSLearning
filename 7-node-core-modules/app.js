@@ -11,9 +11,12 @@ const fs = require('fs');
 // }
 
 //Writing string to file (asynchronous)
-fs.writeFile('7-node-core-modules/testAsync.txt', 'Hello World! (Async)', (error) => {
-    if (error) {
-        throw error;
-    }
-    console.log('The File has been saved');
-});
+// fs.writeFile('7-node-core-modules/testAsync.txt', 'Hello World! (Async)', (error) => {
+//     if (error) {
+//         throw error;
+//     }
+//     console.log('The File has been saved');
+// });
+
+//Reading Files (sync)
+console.log(fs.readFileSync('7-node-core-modules/testSync.txt', 'utf-8'));
