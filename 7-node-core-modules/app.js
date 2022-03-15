@@ -3,4 +3,8 @@
 const fs = require('fs');
 
 //Writing string to file (synchronous)
-fs.writeFileSync('7-node-core-modules/testSync.txt', 'Hello World! (Synchronous)');
+try {
+    fs.writeFileSync('7-node-core-modules/testSync.txt', 'Hello World! (Synchronous)');
+} catch (error) {
+    console.log(error);
+}
