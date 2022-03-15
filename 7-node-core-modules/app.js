@@ -22,9 +22,22 @@ const fs = require('fs');
 // console.log(fs.readFileSync('7-node-core-modules/testSync.txt', 'utf-8'));
 
 //Reading Files (async)
-const fileToRead = fs.readFile('7-node-core-modules/testAsync.txt', 'utf-8', (error, data) => {
-    if (error) {
-        throw error;
-    }
-    console.log(data);
+// const fileToRead = fs.readFile('7-node-core-modules/testAsync.txt', 'utf-8', (error, data) => {
+//     if (error) {
+//         throw error;
+//     }
+//     console.log(data);
+// });
+
+//Readline Core Module
+const readline = require('readline');
+const { stdin: input, stdout: output } = require('process');
+
+const rl = readline.createInterface({input, output});
+
+rl.question('What do you think of Node.js? ', (answer) => {
+    rl.question('What is your name? ', (name) => {
+        console.log(`Thank you ${name} for your valuable feedback: ${answer}`);
+        rl.close();
+    });
 });
