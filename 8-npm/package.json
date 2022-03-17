@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Mamat1411/nodeJSLearning/issues"
   },
-  "homepage": "https://github.com/Mamat1411/nodeJSLearning#readme"
+  "homepage": "https://github.com/Mamat1411/nodeJSLearning#readme",
+  "dependencies": {
+    "validator": "^13.7.0"
+  }
 }
