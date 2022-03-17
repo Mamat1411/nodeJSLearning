@@ -1,0 +1,19 @@
+{
+  "name": "8-npm",
+  "version": "1.0.0",
+  "description": "NodeJS Learning",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mamat1411/nodeJSLearning.git"
+  },
+  "author": "Muhammad Mujahid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mamat1411/nodeJSLearning/issues"
+  },
+  "homepage": "https://github.com/Mamat1411/nodeJSLearning#readme"
+}
