@@ -6,6 +6,6 @@ const chalk = require('chalk');
 // console.log(validator.isNumeric('081913036646'));
 
 console.log(chalk.bold('Hello World'));
-const name = "Muhammad Mujahid";
+const name = "Muhammad";
 const message = chalk `Lorem ipsum dolor {bgRed.black sit amet} consectetur {bgGreen.black adipisicing} elit. Aliquid non amet debitis possimus aut commodi! My Name is {bgBlue.black ${name}}`;
 console.log(message);
