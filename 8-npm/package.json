@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Mamat1411/nodeJSLearning#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
     "validator": "^13.7.0"
   }
 }
