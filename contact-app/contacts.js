@@ -69,5 +69,22 @@ const listContact = () => {
     });
 };
 
+const detailContact = (name) => {
+    const contacts = loadContact();
+    const contact = contacts.find((contact) => contact.name.toLowerCase() === name.toLowerCase());
+
+    //If Name Not Found
+    if (!contact) {
+        console.log(chalk.red.bold(`${name} Not Found`));
+        return false;
+    }
+
+    console.log(chalk.green.bold(contact.name));
+    console.log(contact.phoneNumber);
+    if (contact.email) {
+        console.log(contact.email);
+    }
+};
+
 // module.exports = { questions, saveContact };
-module.exports = { saveContact, listContact };
+module.exports = { saveContact, listContact, detailContact};
