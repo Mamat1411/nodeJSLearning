@@ -19,11 +19,15 @@ if (!fs.existsSync('./contacts.json')) {
 //     });
 // };
 
-const saveContact = (name, email, phoneNumber) => {
-    const contact = {name, email, phoneNumber};
+const loadContact = () => {
     const file = fs.readFileSync('contacts.json', 'utf-8');
     const contacts = JSON.parse(file);
+    return contacts;
+};
 
+const saveContact = (name, email, phoneNumber) => {
+    const contact = {name, email, phoneNumber};
+    const contacts = loadContact();
     //Duplicate data validation
     const duplicate = contacts.find((contact) => contact.name === name);
     if (duplicate) {
@@ -57,5 +61,13 @@ const saveContact = (name, email, phoneNumber) => {
     // rl.close();
 };
 
+const listContact = () => {
+    console.log(chalk.yellow("Contact List:"));
+    const contacts = loadContact();
+    contacts.forEach((contact, i) => {
+        console.log(`${i+1}. ${contact.name} - ${contact.phoneNumber}`);
+    });
+};
+
 // module.exports = { questions, saveContact };
-module.exports = { saveContact };
+module.exports = { saveContact, listContact };
