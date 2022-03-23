@@ -86,5 +86,19 @@ const detailContact = (name) => {
     }
 };
 
+const deleteContact = (name) => {
+    const contacts = loadContact();
+    const undeleted = contacts.filter((contact) => contact.name.toLowerCase() !== name.toLowerCase());
+
+    //If name not found
+    if (contacts.length === undeleted.length) {
+        console.log(chalk.red.bold(`${name} Not Found`));
+        return false;
+    }
+
+    fs.writeFileSync('contacts.json', JSON.stringify(undeleted));
+    console.log(chalk.green.bold(`${name}'s Contact is Successfully Deleted`));
+};
+
 // module.exports = { questions, saveContact };
-module.exports = { saveContact, listContact, detailContact};
+module.exports = { saveContact, listContact, detailContact, deleteContact };

@@ -10,7 +10,7 @@
 
 //Simple Contact App with Different Approach(Data input using arguments in terminal)
 const yargs = require("yargs");
-const { saveContact, listContact, detailContact } = require("./contacts");
+const { saveContact, listContact, detailContact, deleteContact } = require("./contacts");
 yargs.command({
     command : 'add',
     describe: 'Add New Contact',
@@ -58,6 +58,21 @@ yargs.command({
     },
     handler(argv){
         detailContact(argv.name);
+    }
+});
+
+yargs.command({
+    command : 'delete',
+    describe: "Delete A Contact" ,
+    builder : {
+        name: {
+            describe : "Full Name",
+            demandOption : true,
+            type : 'string'
+        }
+    },
+    handler(argv){
+        deleteContact(argv.name);
     }
 });
 
