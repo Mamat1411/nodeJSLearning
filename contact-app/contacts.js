@@ -17,13 +17,13 @@ const questions = (question) => {
     });
 };
 
-const saveContact = (name, phoneNumber) => {
-    const contact = {name, phoneNumber};
+const saveContact = (name, email, phoneNumber) => {
+    const contact = {name, email, phoneNumber};
     const file = fs.readFileSync('contacts.json', 'utf-8');
     const contacts = JSON.parse(file);
     contacts.push(contact);
     fs.writeFileSync('contacts.json', JSON.stringify(contacts));
-    console.log(`Thank you ${name} for letting me have your phone number ${phoneNumber}`);
+    console.log(`Thank you ${name} for letting me have your email ${email} and your phone number ${phoneNumber}`);
     rl.close();
 };
 
