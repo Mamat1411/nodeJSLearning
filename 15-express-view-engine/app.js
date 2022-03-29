@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+//using EJS
+app.set('view engine', 'ejs');
+
 app.get('/', (request, response) => {
     response.sendFile('./index.html', { root: __dirname });
 });
