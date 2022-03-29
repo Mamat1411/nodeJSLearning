@@ -9,16 +9,19 @@ app.get('/', (request, response) => {
     //     email: 'muhammad@gmail.com',
     //     phoneNumber : '081913036646'
     // });
+
     response.sendFile('./index.html', { root: __dirname });
 });
 
 app.get('/about', (request, response) => {
     // response.send('This is About Page');
+
     response.sendFile('./about.html', { root: __dirname });
 });
 
 app.get('/contact', (request, response) => {
     // response.send('This is Contact Page');
+    
     response.sendFile('./contact.html', { root: __dirname });
 });
 
