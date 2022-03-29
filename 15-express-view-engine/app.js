@@ -1,9 +1,13 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const port = 3000;
 
 //using EJS
 app.set('view engine', 'ejs');
+
+//using EJS Layouts Module
+app.use(expressLayouts);
 
 app.get('/', (request, response) => {
     const employee = [
@@ -23,16 +27,23 @@ app.get('/', (request, response) => {
     response.render('index', {
         name : 'Muhammad Mujahid',
         title: 'Express JS Home',
-        employee
+        employee,
+        layout: 'layouts/main'
     });
 });
 
 app.get('/about', (request, response) => {
-    response.render('about', { title: 'About Page' });
+    response.render('about', {
+        title: 'About Page',
+        layout: 'layouts/main'
+    });
 });
 
 app.get('/contact', (request, response) => {
-    response.render('contact', { title: 'Contact Page' });
+    response.render('contact', {
+        title: 'Contact Page',
+        layout: 'layouts/main'
+    });
 });
 
 app.get('/product/:id', (request, response) => {
