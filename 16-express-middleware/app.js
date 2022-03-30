@@ -1,13 +1,28 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const morgan = require('morgan');
 const app = express();
 const port = 3000;
 
 //using EJS
 app.set('view engine', 'ejs');
 
+//Third-Party Middleware
 //using EJS Layouts Module
 app.use(expressLayouts);
+app.use(morgan('dev'));
+
+//using Morgan Module
+
+
+//Built-In Middleware
+app.use(express.static('public'));
+
+//Application Level Middleware
+app.use((request, response, next) => {
+    console.log('Time', Date.now());
+    next();
+});
 
 app.get('/', (request, response) => {
     const employee = [
