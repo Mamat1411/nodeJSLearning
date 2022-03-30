@@ -10,9 +10,9 @@ app.set('view engine', 'ejs');
 //Third-Party Middleware
 //using EJS Layouts Module
 app.use(expressLayouts);
-app.use(morgan('dev'));
 
 //using Morgan Module
+app.use(morgan('dev'));
 
 
 //Built-In Middleware
