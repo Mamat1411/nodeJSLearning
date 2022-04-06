@@ -1,6 +1,5 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
-const morgan = require('morgan');
 const app = express();
 const port = 3000;
 
@@ -10,10 +9,6 @@ app.set('view engine', 'ejs');
 //Third-Party Middleware
 //using EJS Layouts Module
 app.use(expressLayouts);
-
-//using Morgan Module
-app.use(morgan('dev'));
-
 
 //Built-In Middleware
 app.use(express.static('public'));
