@@ -50,10 +50,6 @@ app.get('/contact', (request, response) => {
     });
 });
 
-app.get('/product/:id', (request, response) => {
-    response.send(`Product ID : ${request.params.id} <br> Category : ${request.query.category}`);
-});
-
 app.use('/', (request, response) => {
     response.status(404);
     response.send(`<h1>404</h1>`);
