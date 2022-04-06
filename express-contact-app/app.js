@@ -13,12 +13,6 @@ app.use(expressLayouts);
 //Built-In Middleware
 app.use(express.static('public'));
 
-//Application Level Middleware
-app.use((request, response, next) => {
-    console.log('Time', Date.now());
-    next();
-});
-
 app.get('/', (request, response) => {
     const employee = [
         {
