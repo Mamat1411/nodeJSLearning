@@ -1,7 +1,5 @@
 const { error } = require('console');
 const fs = require('fs');
-const chalk = require('chalk');
-const validator = require('validator');
 
 if (!fs.existsSync('./contacts.json')) {
     fs.writeFileSync('contacts.json', '[]', 'utf-8');
