@@ -17,4 +17,10 @@ const loadContact = () => {
     return contacts;
 };
 
-module.exports = { loadContact };
+const findContact = (name) => {
+    const contacts = loadContact();
+    const contact = contacts.find((contact) => contact.name === name);
+    return contact;
+};
+
+module.exports = { loadContact, findContact };
