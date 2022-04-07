@@ -45,9 +45,11 @@ app.get('/about', (request, response) => {
 });
 
 app.get('/contact', (request, response) => {
+    const contacts = loadContact();
     response.render('contact', {
         title: 'Contact Page',
-        layout: 'layouts/main'
+        layout: 'layouts/main',
+        contacts
     });
 });
 
