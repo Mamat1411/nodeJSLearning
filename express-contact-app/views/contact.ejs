@@ -8,20 +8,23 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Phone Number</th>
-                    <th scope="col">Email</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <% contacts.forEach((contact, i) => { i++ %>
+                  <% if (contacts.length === 0) { %>
+                    <div class="alert alert-danger fw-bold" role="alert">
+                      Contact Data is Empty
+                    </div>
+                  <% } %>
+                  <% contacts.forEach((c, i) => { i++ %>
                     <tr>
                       <th scope="row"><%= i++ %> </th>
-                      <td><%= contact.name %> </td>
-                      <td><%= contact.phoneNumber %> </td>
-                      <td><%= contact.email %> </td>
-                      <td><a href="/contact/<%= contact.name %> " class="badge bg-primary rounded-pill text-decoration-none"><i class="bi bi-info-circle"></i> Details</a></td>
+                      <td><%= c.name %> </td>
+                      <td><%= c.phoneNumber %> </td>
+                      <td><a href="/contact/<%= c.name %> " class="badge bg-primary rounded-pill text-decoration-none"><i class="bi bi-info-circle"></i> Details</a></td>
                     </tr>
-                  <% }) %>
+                    <% }) %>
                 </tbody>
             </table>
         </div>
