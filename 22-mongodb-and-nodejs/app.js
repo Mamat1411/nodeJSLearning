@@ -33,27 +33,40 @@ client.connect((err, client) => {
     // );
 
     //Add Multiple Documents into Employee Collection
-    db.collection('employee').insertMany(
-        [
-            {
-                name: "Maher",
-                email: "maher@gmail.com"
-            },
-            {
-                name: "Azza",
-                email: "azza@gmail.com"
-            },
-            {
-                name: "Mazen",
-                email: "mazen@gmail.com"
-            }
-        ],
-        (err, results) => {
-            if (err) {
-                return console.log("Insert Data Failed");
-            }
+    // db.collection('employee').insertMany(
+    //     [
+    //         {
+    //             name: "Maher",
+    //             email: "maher@gmail.com"
+    //         },
+    //         {
+    //             name: "Azza",
+    //             email: "azza@gmail.com"
+    //         },
+    //         {
+    //             name: "Mazen",
+    //             email: "mazen@gmail.com"
+    //         }
+    //     ],
+    //     (err, results) => {
+    //         if (err) {
+    //             return console.log("Insert Data Failed");
+    //         }
 
+    //         console.log(results);
+    //     }
+    // );
+
+    //Show All Documents from Database
+    console.log(
+        db
+        .collection('employee')
+        .find()
+        .toArray((err, results) => {
+            if (err) {
+                return console.log("Show Data Failed");
+            }
             console.log(results);
-        }
+        })
     );
 });
