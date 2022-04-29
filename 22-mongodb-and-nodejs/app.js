@@ -58,10 +58,23 @@ client.connect((err, client) => {
     // );
 
     //Show All Documents from Database
+    // console.log(
+    //     db
+    //     .collection('employee')
+    //     .find()
+    //     .toArray((err, results) => {
+    //         if (err) {
+    //             return console.log("Show Data Failed");
+    //         }
+    //         console.log(results);
+    //     })
+    // );
+
+    //Show Specific Document(s) from Database
     console.log(
         db
         .collection('employee')
-        .find()
+        .find({name: "Muhammad Mujahid"})
         .toArray((err, results) => {
             if (err) {
                 return console.log("Show Data Failed");
