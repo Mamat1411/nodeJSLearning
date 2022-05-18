@@ -32,6 +32,13 @@ app.get('/', (request, response) => {
     });
 });
 
+app.get('/about', (request, response) => {
+    response.render('about', {
+        title: 'About Page',
+        layout: 'layouts/main'
+    });
+});
+
 app.listen(port, () => {
     console.log(`Mongo Contact App is listening to http://localhost:${port}`);
 });
