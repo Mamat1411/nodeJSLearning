@@ -57,7 +57,7 @@ client.connect((err, client) => {
     //     }
     // );
 
-    //Show All Documents from Database
+    //Show All Documents from Employee Collection
     // console.log(
     //     db
     //     .collection('employee')
@@ -70,7 +70,7 @@ client.connect((err, client) => {
     //     })
     // );
 
-    //Show Specific Document(s) from Database
+    //Show Specific Document(s) from Employee Collection
     // console.log(
     //     db
     //     .collection('employee')
@@ -83,7 +83,7 @@ client.connect((err, client) => {
     //     })
     // );
 
-    //Updating A Document in Database
+    //Updating A Document in Employee Collection
     // const updatePromise = db.collection('employee').updateOne(
     //     {
     //         _id: ObjectId('626a3683b14f6eeab5c480d7')
@@ -102,23 +102,34 @@ client.connect((err, client) => {
     //         console.log(err);
     //     });
 
-    //Updating Specific Documents in Database
-    const updatePromise = db.collection('employee').updateMany(
-        {
-            name: 'Azza Mamduh'
-        },
-        {
-            $set: {
-                name: 'Azza'
-            }
-        }
-    );
+    //Updating Specific Documents in Employee Collection
+    // const updatePromise = db.collection('employee').updateMany(
+    //     {
+    //         name: 'Azza Mamduh'
+    //     },
+    //     {
+    //         $set: {
+    //             name: 'Azza'
+    //         }
+    //     }
+    // );
 
-    updatePromise
-        .then((result) => {
-            console.log(result);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    // updatePromise
+    //     .then((result) => {
+    //         console.log(result);
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     });
+
+    //Deleting A Data in Employee Collection
+    db.collection('employee').deleteOne(
+        {
+            _id: ObjectId('626a3683b14f6eeab5c480d7')
+        }
+    ).then((result) => {
+        console.log(result);
+    }).catch((err) => {
+        console.log(err);
+    });
 });
