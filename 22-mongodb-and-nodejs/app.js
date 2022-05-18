@@ -1,4 +1,4 @@
-const { mongoClient, MongoClient } = require("mongodb");
+const { mongoClient, MongoClient, ObjectId } = require("mongodb");
 
 const uri = 'mongodb://127.0.0.1:27017';
 const dbName = 'dbEmployee';
@@ -71,15 +71,34 @@ client.connect((err, client) => {
     // );
 
     //Show Specific Document(s) from Database
-    console.log(
-        db
-        .collection('employee')
-        .find({name: "Muhammad Mujahid"})
-        .toArray((err, results) => {
-            if (err) {
-                return console.log("Show Data Failed");
+    // console.log(
+    //     db
+    //     .collection('employee')
+    //     .find({name: "Muhammad Mujahid"})
+    //     .toArray((err, results) => {
+    //         if (err) {
+    //             return console.log("Show Data Failed");
+    //         }
+    //         console.log(results);
+    //     })
+    // );
+
+    //Updating A Document in Database
+    const updatePromise = db.collection('employee').updateOne(
+        {
+            _id: ObjectId('626a3683b14f6eeab5c480d7')
+        },
+        {
+            $set:{
+                name: 'Maher',
             }
-            console.log(results);
-        })
+        }
     );
+
+    updatePromise
+        .then((result) => {
+            console.log(result);
+        }).catch((err) => {
+            console.log(err);
+        });
 });
