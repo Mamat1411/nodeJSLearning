@@ -122,10 +122,21 @@ client.connect((err, client) => {
     //         console.log(err);
     //     });
 
-    //Deleting A Data in Employee Collection
-    db.collection('employee').deleteOne(
+    //Deleting A Document in Employee Collection
+    // db.collection('employee').deleteOne(
+    //     {
+    //         _id: ObjectId('626a3683b14f6eeab5c480d7')
+    //     }
+    // ).then((result) => {
+    //     console.log(result);
+    // }).catch((err) => {
+    //     console.log(err);
+    // });
+
+    //Deleting Specific Documents in Employee Collection
+    db.collection('employee').deleteMany(
         {
-            _id: ObjectId('626a3683b14f6eeab5c480d7')
+            name: {$in: ['Mujahid', 'Muhammad', 'Azza']}
         }
     ).then((result) => {
         console.log(result);
