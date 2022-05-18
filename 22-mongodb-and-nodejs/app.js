@@ -84,13 +84,32 @@ client.connect((err, client) => {
     // );
 
     //Updating A Document in Database
-    const updatePromise = db.collection('employee').updateOne(
+    // const updatePromise = db.collection('employee').updateOne(
+    //     {
+    //         _id: ObjectId('626a3683b14f6eeab5c480d7')
+    //     },
+    //     {
+    //         $set:{
+    //             name: 'Maher',
+    //         }
+    //     }
+    // );
+
+    // updatePromise
+    //     .then((result) => {
+    //         console.log(result);
+    //     }).catch((err) => {
+    //         console.log(err);
+    //     });
+
+    //Updating Specific Documents in Database
+    const updatePromise = db.collection('employee').updateMany(
         {
-            _id: ObjectId('626a3683b14f6eeab5c480d7')
+            name: 'Azza Mamduh'
         },
         {
-            $set:{
-                name: 'Maher',
+            $set: {
+                name: 'Azza'
             }
         }
     );
@@ -98,7 +117,8 @@ client.connect((err, client) => {
     updatePromise
         .then((result) => {
             console.log(result);
-        }).catch((err) => {
+        })
+        .catch((err) => {
             console.log(err);
         });
 });
