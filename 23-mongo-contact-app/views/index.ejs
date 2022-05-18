@@ -1,0 +1,14 @@
+<h2>Hello <%= name %></h2>
+<h4>Welcome to My Simple Express JS Example</h4>
+<br>
+<h4>Employee List</h4>
+<% if (employee.length < 1) { %>
+  <p>Employee Data is Empty</p>
+<% } else {%>
+  <% employee.forEach(emp => { %>
+    <ul>
+      <li>Name : <%= emp.name %> </li>
+      <li>Email : <%= emp.email %> </li>
+    </ul>
+  <% }) %>
+<% } %>
