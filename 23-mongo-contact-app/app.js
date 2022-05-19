@@ -74,6 +74,17 @@ app.get('/contact', async (request, response) => {
     });
 });
 
+// Detail Contact Page
+app.get('/contact/:name', async (request, response) => {
+    const contact = await Contact.findOne({name: request.params.name});
+
+    response.render('detail', {
+        title: 'Detail Contact Page',
+        layout: 'layouts/main',
+        contact
+    });
+});
+
 app.listen(port, () => {
     console.log(`Mongo Contact App is listening to http://localhost:${port}`);
 });
