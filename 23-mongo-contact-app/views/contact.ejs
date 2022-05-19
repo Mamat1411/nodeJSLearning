@@ -8,6 +8,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Phone Number</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -21,7 +22,8 @@
                     <tr>
                       <th scope="row"><%= i++ %> </th>
                       <td><%= c.name %> </td>
-                      <td><%= c.phoneNumber %> </td>
+                      <td><%= c.phone %> </td>
+                      <td><%= c.email %> </td>
                       <td><a href="/contact/<%= c.name %> " class="badge bg-primary rounded-pill text-decoration-none"><i class="bi bi-info-circle"></i> Details</a></td>
                     </tr>
                     <% }) %>
