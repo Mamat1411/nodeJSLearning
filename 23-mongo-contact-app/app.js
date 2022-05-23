@@ -83,6 +83,36 @@ app.get('/contact/add', async (request, response) => {
     });
 });
 
+// Add Contact Process
+app.post(
+    '/contact',
+    [
+        body('name').custom(async (value) => {
+            const duplication = await Contact.findOne({ name: value });
+            if (duplication) {
+                throw new Error ('Contact Name Has Been Used');
+            }
+            return true;
+        }),
+        check('email', 'Email is Not Valid!').isEmail(),
+        check('phone', 'Phone Number is Not Valid!').isMobilePhone('id-ID'),
+    ],
+    (request, response) => {
+    const errors = validationResult(request);
+    if (!errors.isEmpty()) {
+        response.render('addContact', {
+            title: 'Add Contact Page',
+            layout: 'layouts/main',
+            errors: errors.array(),
+        });
+    } else {
+        Contact.insertMany(request.body, (error, result) => {
+            request.flash('msg', 'Contact is Successfully Added');
+            response.redirect('/contact');
+        });
+    }
+});
+
 // Detail Contact Page
 app.get('/contact/:name', async (request, response) => {
     const contact = await Contact.findOne({name: request.params.name});
