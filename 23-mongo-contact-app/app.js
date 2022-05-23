@@ -74,6 +74,14 @@ app.get('/contact', async (request, response) => {
     });
 });
 
+// Add Contact Page
+app.get('/contact/add', async (request, response) => {
+    response.render('addContact', {
+        title: 'Add Contact Page',
+        layout: 'layouts/main'
+    });
+});
+
 // Detail Contact Page
 app.get('/contact/:name', async (request, response) => {
     const contact = await Contact.findOne({name: request.params.name});
