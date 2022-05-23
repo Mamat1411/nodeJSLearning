@@ -50,7 +50,7 @@ app.get('/', (request, response) => {
     ];
     response.render('index', {
         name : 'Muhammad Mujahid',
-        title: 'Express JS Home',
+        title: 'Express JS and Mongo DB Contact App Homepage',
         employee,
         layout: 'layouts/main'
     });
